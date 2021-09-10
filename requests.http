@@ -1,8 +1,10 @@
 GET http://localhost:3000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzEzMDE1MTN9.F51DiZBsTzNYuRwn-cnf0moWu9LWx9J_8uk4tjYQXgA
+Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/products/11
+GET http://localhost:3000/products/4
 
 ###
 
@@ -11,11 +13,10 @@ content-type: application/json
 
 
 {
-"name": "LeBron James",
-"price": 23,
+"name": "Hanky the Christmas Poo",
+"price": 300,
 "integer": "",
-"image_url": "",
-"description": "the GOAT"
+"description": "the smelliest happiest live poo in December"
 }
 
 ### 
@@ -36,3 +37,41 @@ content-type: application/json
 
 DELETE http://localhost:3000/suppliers/7
 
+
+###
+
+
+# Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+  {
+    "name": "Alice",
+    "email": "Alice@gmail.com",
+    "password": "password",
+    "password_confirmation": "password"
+  }
+
+
+###
+
+# Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+  {
+    "email": "Alice@gmail.com",
+    "password": "password"
+  }
+
+###
+
+
+POST http://localhost:3000/products
+
+
+  {
+    "name": "Alice",
+    "width": 640,
+    "height": 480
+  }
