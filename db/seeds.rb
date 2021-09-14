@@ -2,7 +2,12 @@ Supplier.create!([
   {name: "The Store", email: "thestore@gmail.com", phone_number: "333-4444"},
   {name: "The Other Store", email: "tos@gmail.com", phone_number: "555-7777"},
 ])
+Category.create!([
+  {name: "Home Goods"},
+  {name: "Mens Stuff"},
+  {name: "Small Items"}
 
+])
 
 Product.create!([
  
@@ -84,3 +89,13 @@ image.save
 image = Image.find(10)
 image.product_id = 5
 image.save
+
+ProductCategory.create!([
+  {product_id: 3, category_id: 1 },
+  {product_id: 4, category_id: 1 },
+  {product_id: 5, category_id: 1 },
+  {product_id: 6, category_id: 3 },
+  {product_id: 3, category_id: 3 },
+  {product_id: 1, category_id: 2 },
+  {product_id: 2, category_id: 2 }
+])

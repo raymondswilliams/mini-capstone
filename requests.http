@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE3MTg4NzR9.cSVO_n9htsV4yXRV4V8zyJ5fHRge3aWEYD1-_gIe4As
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE3MTk2MTZ9.7JwXEIyOFOmg7qi6cdn01R1AOuRL3lXB9KiX6L88xYo
 GET http://localhost:3000/products
 Authorization: {{jwt}}
 Content-Type: application/json
@@ -46,19 +46,19 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "user_id": 1,
+  
   "product_id": 2,
   "quantity": 1
   
 }
 ### SHOW
-GET http://localhost:3000/orders/1
-Authorization: {{jwt}}
+GET http://localhost:3000/orders/10
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### INDEX
 GET http://localhost:3000/orders
-Authorization: {{jwt}}
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 

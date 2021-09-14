@@ -13,9 +13,9 @@ class OrdersController < ApplicationController
     product_id: params[:product_id],
     quantity: params[:quantity]
     )
-    order.subtotal = order.quantity * order.product.price
-    order.tax = order.subtotal * 0.09
-    order.total = order.subtotal + order.tax
+    order.subtotal = order.quantity.to_i * order.product.price.to_i
+    order.tax = order.subtotal.to_i * 0.09
+    order.total = order.subtotal.to_i + order.tax.to_i
     if order.save
       render json: order
     else
