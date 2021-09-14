@@ -1,47 +1,27 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE3MTg4NzR9.cSVO_n9htsV4yXRV4V8zyJ5fHRge3aWEYD1-_gIe4As
 GET http://localhost:3000/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzEzMDE1MTN9.F51DiZBsTzNYuRwn-cnf0moWu9LWx9J_8uk4tjYQXgA
+Authorization: {{jwt}}
 Content-Type: application/json
 
-###
-
+### SHOW
 GET http://localhost:3000/products/4
 
-###
-
-POST http://localhost:3000/products
-content-type: application/json
-
-
-{
-"name": "Hanky the Christmas Poo",
-"price": 300,
-"integer": "",
-"description": "the smelliest happiest live poo in December"
-}
-
-### 
-
+### UPDATE
 PATCH http://localhost:3000/products/2
 content-type: application/json
-
-
 {
-"name": "Banana",
-"price": 3,
-"description": "A yellow, elongated fruit. its best when no longer green"
+"name": "",
+"price": ,
+"description": "",
+"supplier_id": 
+
 }
 
-
-###
-
-
+### DELETE
 DELETE http://localhost:3000/suppliers/7
 
 
-###
-
-
-# Users create (signup)
+### Users create (signup)
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -52,53 +32,33 @@ Content-Type: application/json
     "password_confirmation": "password"
   }
 
-
-###
-
-# Sessions create (login)
+### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
   {
-    "email": "Alice@gmail.com",
+    "email": "Nuke@gmail.com",
     "password": "password"
   }
-
-###
-
-
-POST http://localhost:3000/products
-
-
-  {
-    "name": "Alice",
-    "width": 640,
-    "height": 480
-  }
-
-
-###
-
-
+### CREATE
 POST http://localhost:3000/orders
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzEzOTE3MTJ9.zENqn0tmcqOXSSQeGGuEuSbxDJwG4AG5BGSNJ6Xm7Bg
 
 {
- 
-  "product_id": 1,
-  "quantity": 5,
+  "user_id": 1,
+  "product_id": 2,
+  "quantity": 1
   
-
-  
-  }
-###
+}
+### SHOW
 GET http://localhost:3000/orders/1
+Authorization: {{jwt}}
 Content-Type: application/json
 
-###
-
+### INDEX
 GET http://localhost:3000/orders
+Authorization: {{jwt}}
 Content-Type: application/json
 
 
