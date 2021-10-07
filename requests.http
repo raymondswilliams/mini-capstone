@@ -1,12 +1,13 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE3MTk2MTZ9.7JwXEIyOFOmg7qi6cdn01R1AOuRL3lXB9KiX6L88xYo
+
+### INDEX PRODUCTS
+
 GET http://localhost:3000/products
-Authorization: {{jwt}}
-Content-Type: application/json
 
-### SHOW
-GET http://localhost:3000/products/4
+### SHOW PRODUCTS
+GET http://localhost:3000/products/2
 
-### UPDATE
+### UPDATE PRODUCTS
 PATCH http://localhost:3000/products/2
 content-type: application/json
 {
@@ -17,7 +18,7 @@ content-type: application/json
 
 }
 
-### DELETE
+### DELETE 
 DELETE http://localhost:3000/suppliers/7
 
 
@@ -40,7 +41,7 @@ Content-Type: application/json
     "email": "Nuke@gmail.com",
     "password": "password"
   }
-### CREATE
+### CREATE ORDERS
 POST http://localhost:3000/orders
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
@@ -51,17 +52,27 @@ Content-Type: application/json
   "quantity": 1
   
 }
-### SHOW
+### SHOW ORDERS
 GET http://localhost:3000/orders/10
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
-### INDEX
+### INDEX ORDERS 
 GET http://localhost:3000/orders
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
+### Carted Products Create pass null in order_id
 
+POST http://localhost:3000/carted_products
+Content-Type: application/json
 
+{
+  "user_id": ,
+  "product_id": ,
+  "order_id": ,
+  "quantity": ,
+  "status": "carted"
+}
 
 

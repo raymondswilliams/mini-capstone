@@ -10,8 +10,6 @@ class OrdersController < ApplicationController
   def create
     order = Order.new(
     user_id: current_user.id,
-    product_id: params[:product_id],
-    quantity: params[:quantity]
     )
     order.subtotal = order.quantity.to_i * order.product.price.to_i
     order.tax = order.subtotal.to_i * 0.09
